@@ -1,0 +1,24 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="#" class="nav-link">Tasklists</a></li>
+      <h1>id: <%= @task.id %> のタスク詳細ページ</h1>
+      <span><%= @task.content %></span>
+      <span><%= @task.status %></span>
+      <%= link_to '一覧に戻る', tasks_path %>
+      <%= link_to 'このタスクを編集する', edit_task_path(@task) %>
+      <%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してもよろしいですか'} %>
+    
+    </ul>
+  </div>
+</div>
