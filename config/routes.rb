@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   # new: 新規作成用のフォームページ
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:new, :create]
 
   resources :tasks
 end
